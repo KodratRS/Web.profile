@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodrat Ratu Alamsyah - Personal Portfolio</title>
+    <link rel="icon" href="assets/zenicwhite.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+ body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a3a 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            
+        }
+
+        body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255,215,0,0.08), transparent 60%),
+              linear-gradient(135deg, #0d0d20, #121233, #0f0f1a);
+  background-size: 200% 200%;
+  animation: auroraMove 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes auroraMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+        .geometric-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+            background-image: 
+                linear-gradient(30deg, transparent 40%, rgba(255, 215, 0, 0.1) 41%, rgba(255, 215, 0, 0.1) 42%, transparent 43%),
+                linear-gradient(150deg, transparent 40%, rgba(0, 150, 255, 0.1) 41%, rgba(0, 150, 255, 0.1) 42%, transparent 43%);
+            background-size: 100px 100px, 80px 80px;
+            animation: geometricMove 20s linear infinite;
+        }
+
+        @keyframes geometricMove {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-100px) translateY(-100px); }
+        }
+
+      
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+       
+        .hero {
+            
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 300px;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin: 1rem 0;
+}
+
+.hero-desc {
+  color: #aaa;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #121212;
+  padding: 0.9rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .profile-img img {
+           width: 150px;
+           height: 150px;
+           border-radius: 50%;
+           border: 3px solid #FFD700;
+           object-fit: cover;
+           display: block;
+           margin: 0 auto 2rem;
+          }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+
+        .typing-text {
+            font-size: 1.1rem;
+            color: #FFD700;
+            min-height: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 3rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+      
+        .about-text {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #cccccc;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease 0.2s;
+        }
+
+        .about-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+.skill-section {
+  padding: 6rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.3rem;
+  color: #FFD700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 14px;
+  padding: 1.8rem 1.4rem;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,215,0,0.12), rgba(0,255,255,0.05));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.08);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.skill-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FFD700;
+  letter-spacing: 0.5px;
+}
+
+.skill-level {
+  font-size: 0.9rem;
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.skill-desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Exo 2', sans-serif;
+}
+
+
+     .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(25,25,45,0.95), rgba(15,15,25,0.9));
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.08s ease-out, box-shadow 0.1s ease-out, border-color 0.12s ease-out;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.25), transparent);
+  transition: left 0.25s ease;
+}
+
+.card:hover::before {
+  left: 150%;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #FFD700;
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.3),
+    inset 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .card {
+    transform: none !important;
+    box-shadow: 0 0 10px rgba(255,215,0,0.05);
+  }
+}
+
+ 
+.card-section {
+  position: relative;
+  padding: 8rem 5rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-section .card-bg {
+  position: absolute;
+  top: 10%;               
+  bottom: 10%;            
+  left: 0;                
+  right: 0;               
+  z-index: -1;
+  border-radius: 25px;
+  background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 40%);
+  z-index: 0;
+  background-size: 200% 200%;
+  animation: cardAurora 14s ease-in-out infinite;
+  opacity: 0.95;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    transparent 100%
+  );
+}
+
+
+
+@keyframes cardAurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.card-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(90deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+.card-section .cards-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.card-section .card {
+  background: linear-gradient(145deg, rgba(25,25,45,0.9), rgba(15,15,25,0.85));
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.card-section .card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.4),
+    0 0 40px rgba(255, 215, 0, 0.3),
+    inset 0 0 20px rgba(255, 215, 0, 0.15);
+}
+
+      
+        .project-card {
+  background: linear-gradient(145deg, rgba(25,25,45,0.96), rgba(10,10,20,0.92));
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  transition: transform 0.1s ease-out, box-shadow 0.12s ease-out, border-color 0.12s ease-out;
+  cursor: pointer;
+  position: relative;
+  will-change: transform, box-shadow;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 200, 0.35), transparent);
+  transition: left 0.25s ease;
+}
+
+.project-card:hover::before {
+  left: 160%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  border-color: #FFD700;
+  box-shadow:
+    0 0 35px rgba(255, 215, 0, 0.6),
+    0 0 60px rgba(255, 215, 0, 0.4),
+    inset 0 0 20px rgba(255, 215, 0, 0.25);
+}
+
+      
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 2rem;
+            border: 1px solid #FFD700;
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 2rem;
+            color: #FFD700;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+    
+        .contact-info {
+        background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 20%);
+        z-index: 0;
+        background-size: 200% 200%;
+        animation: cardAurora 14s ease-in-out infinite;
+        opacity: 0.95;
+        mask-image:right,
+        transparent 0%,
+        rgba(0, 0, 0, 1) 10%,
+        rgba(0, 0, 0, 1) 90%,}
+        
+        
+
+        .contact-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .contact-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-item h3 {
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+
+        .ngl-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #121212;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .ngl-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+    
+
+        
+
+        .footer {
+            background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 60%);
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            margin-top: 3rem;
+        }
+
+        .footer-quote {
+            font-size: 1.2rem;
+            color: #FFD700;
+            font-style: italic;
+        }
+
+     
+        .welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .welcome-modal.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(15, 52, 96, 0.9) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(20px);
+            max-width: 500px;
+            margin: 2rem;
+            animation: welcomeSlideIn 0.8s ease-out;
+        }
+
+        @keyframes welcomeSlideIn {
+            from {
+                transform: translateY(-50px) scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        img {
+              box-shadow: 5px 5px 7px #b59a00;
+         }
+         img {
+      border-radius: 5%; 
+    }
+
+        .welcome-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .welcome-text {
+            font-family: 'Exo 2', sans-serif;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .welcome-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #121212;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .welcome-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .welcome-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .about {
+  padding: 6rem 2rem;
+  background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 80%);
+  z-index: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 3rem;
+}
+
+.about-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img {
+  width: 85%;
+  max-width: 400px;
+  border-radius: 20px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.about-img:hover {
+  transform: rotateY(8deg) scale(1.02);
+}
+
+.about-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-right .section-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.about-text {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.about-quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #FFD700;
+  border-left: 3px solid #FFD700;
+  padding-left: 1rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-quote {
+    border-left: none;
+    border-top: 2px solid #FFD700;
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+
+  .about-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+}
+
+.projects {
+  padding: 6rem 2rem;
+  color: #fff;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-desc {
+  color: #ccc;
+  margin-bottom: 4rem;
+  font-size: 1.1rem;
+}
+
+.featured-project {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  background: linear-gradient(135deg, rgba(25,25,45,0.95), rgba(15,15,25,0.9));
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.featured-project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.1);
+}
+
+.featured-img {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-text {
+  flex: 1;
+  padding: 2rem;
+  text-align: left;
+}
+
+.featured-text h3 {
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+.featured-text p {
+  color: #bbb;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.project-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #121212;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-3px);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: linear-gradient(135deg, rgba(25,25,45,0.95), rgba(15,15,25,0.9));
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+  border-color: #FFD700;
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.project-info h4 {
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .featured-project {
+    flex-direction: column;
+    text-align: center;
+  }
+  .featured-text {
+    text-align: center;
+  }
+}
+
+
+
+.hobbies-timeline {
+  position: relative;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.05);
+}
+
+.hobbies-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+background: radial-gradient(rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+  background-size: 200% 200%;
+  animation: hobbiesAurora 12s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes hobbiesAurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.hobbies-timeline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+  background-size: 80px 80px;
+  opacity: 0.1;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(6px);
+  background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+  border-radius: 10px;
+  padding: 2rem 2rem 2rem 3rem;
+  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.05);
+}
+
+.timeline-item {
+  margin: 2.5rem 0;
+  position: relative;
+  text-align: left;
+  padding-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 215, 0, 0.07);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+}
+
+.timeline-item h3 {
+  font-family: 'Orbitron', monospace;
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(255,215,0,0.4);
+}
+
+.timeline-item p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+
+.songs-section {
+  position: relative;
+
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  box-shadow: 0 0 30px rgba(255,215,0,0.05);
+  overflow: hidden;
+}
+
+.songs-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+}
+
+@keyframes songsGlow {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(15deg) scale(1.1); }
+}
+
+.music-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.music-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,215,0,0.1);
+}
+
+.music-item:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #FFD700;
+  box-shadow:
+    0 0 25px rgba(255,215,0,0.4),
+    inset 0 0 15px rgba(255,215,0,0.2);
+}
+
+.music-rank {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem;
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255,215,0,0.6);
+}
+
+.music-name {
+  flex: 1;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.music-genre {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .music-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.4rem;
+  }
+  .music-name {
+    font-size: 1.1rem;
+  }
+}
+
+
+.study-timeline {
+  position: relative;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 120, 255, 0.08);
+}
+
+.study-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient( rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+  background-size: 200% 200%;
+  animation: studyAurora 14s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+@keyframes studyAurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.study-timeline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient( rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+}
+
+
+.study-intro {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.study-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: 2px solid rgba(255, 215, 0, 0.25);
+  padding-left: 2rem;
+  background: radial-gradient(rgba(255,215,0,0.1), transparent 20%);
+  z-index: 0;
+  border-radius: 10px;
+  
+  backdrop-filter: blur(8px);
+}
+
+.study-item {
+  margin: 2.5rem 0;
+  position: relative;
+  text-align: left;
+  padding-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.study-item::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.study-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 215, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.study-item h3 {
+  font-family: 'Orbitron', monospace;
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.study-item p {
+  color: #bbb;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+
+@media (max-width: 700px) {
+  .study-container {
+    padding-left: 1.5rem;
+  }
+  .study-item {
+    padding-left: 1.5rem;
+  }
+}
+.skill-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(145deg, #0b0b16 0%, #161630 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.3rem;
+  color: #FFD700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 14px;
+  padding: 1.8rem 1.4rem;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.skill-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.6s ease;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,215,0,0.12), rgba(0,255,255,0.05));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.08);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.skill-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FFD700;
+  letter-spacing: 0.5px;
+}
+
+.skill-level {
+  font-size: 0.9rem;
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.skill-desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Exo 2', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.coming-soon {
+  position: relative;
+  text-align: center;
+  padding: 8rem 2rem;
+  color: #fff;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,215,0,0.2);
+  border-bottom: 1px solid rgba(255,215,0,0.2);
+}
+
+.coming-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.1), transparent 30%),
+              linear-gradient(135deg, rgba(15,15,35,0.9), rgba(10,10,25,0.8));
+  animation: auroraMove 12s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.coming-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.5rem;
+  color: #FFD700;
+  text-shadow: 0 0 25px rgba(255,215,0,0.6);
+  margin-bottom: 1rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.coming-desc {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.coming-tagline {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFD700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-top: 1rem;
+  animation: fadePulse 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(255,215,0,0.4); }
+  to { text-shadow: 0 0 30px rgba(255,215,0,0.9); }
+}
+
+@keyframes fadePulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+</style>
+
+    </style>
+</head>
+<body>
+    <div class="geometric-bg"></div>
+    
+    
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-content">
+            <h2 class="welcome-title">Selamat Datang</h2>
+            <p class="welcome-text">
+                Masuki dunia digital Kodrat Ratu Alamsyah - tempat di mana teknologi, psikologi, dan filosofi bertemu dalam harmoni futuristik.
+              <p style="color: #FFD700;">Sekaligus tempat mengenal Kodrat lebih lanjut</p><br>
+              <p style="color: grey;">*Saran buka di chrome agar maksimal</p> <br>
+            </p>
+            <button id="playAudioBtn" class="welcome-btn">Klik untuk musik</button>
+
+
+<audio id="bgMusic" loop>
+  <source src="assets/muse2.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung pemutar audio.
+</audio>
+<br><br>
+            <button class="welcome-btn" onclick="closeWelcome()">Jelajahi Sekarang</button>
+            <br> 
+            <br>
+              
+
+        </div>
+    </div>
+
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">KRA</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#study">Study</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#anime">Anime</a></li>
+                <li><a href="#songs">Songs</a></li>
+                <li><a href="#poems">Poems</a></li>
+                <li><a href="#partof">Part Of</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+   
+<section class="hero">
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-container">
+    <div class="hero-left">
+      <h1 class="hero-title">Kodrat Ratu Alamsyah</h1>
+      <p class="hero-subtitle">17yo | INFJ-T 4w5 Sx/So | Existentialism</p>
+      <p class="hero-desc">
+        Visioner muda yang menavigasi antara teknologi, kesadaran, dan sistem makna.  
+        Membangun dunia yang berlandaskan harmoni, logika, dan empati.
+      </p>
+      <a href="#about" class="cta-btn">Lihat Profil</a>
+    </div>
+
+    <div class="hero-right">
+      <img src="assets/lam 2.jpg" alt="Profile" class="hero-img">
+    </div>
+
+  </div>
+</section>
+
+
+
+
+   <section class="about" id="about">
+  <div class="about-container">
+    <div class="about-left">
+      <img src="assets/imfj2.jpg" alt="Alam Portrait" class="about-img">
+    </div>
+    <div class="about-right">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        seorang pemuda visioner yang menjelajahi batas antara 
+        <span class="highlight">teknologi, kesadaran, dan filosofi kehidupan.</span>  
+        Bagi saya, dunia bukan sekadar tempat untuk bertahan, tapi ruang untuk memahami makna dari setiap sistem, pola, dan tindakan manusia. Dengan dasar di bidang Teknologi dan minat mendalam pada psikologi serta prinsip eksistensial, saya berfokus menciptakan karya yang tidak hanya berfungsi, tapi juga bermakna. Saya percaya masa depan dibangun oleh mereka yang mampu berpikir sistematis sekaligus merasakan dengan empati.
+      </p>
+      <blockquote class="about-quote">
+      “Kode bisa membangun dunia, tapi kesadaranlah yang membuatnya hidup.”.
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skill-section">
+  <h2 class="section-title">Skills / Talents</h2>
+  <div class="skills-container">
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Leadership</h3>
+      </div>
+      <p class="skill-desc">
+        gaya kepemimpinan adaptif dengan keseimbangan antara ketegasan dan empati. berfokus pada arah, stabilitas, dan pemberdayaan tim, bukan dominasi.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Meta-cognition</h3> 
+      </div>
+      <p class="skill-desc">
+        kesadaran atas pikiran sendiri; kemampuan untuk mengamati, mengevaluasi, dan mengarahkan proses berpikir secara sadar. menjadi fondasi refleksi dan pengendalian diri.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Psychology</h3>
+      </div>
+      <p class="skill-desc">
+       kemampuan memahami struktur pikiran, emosi, dan perilaku manusia secara mendalam. digunakan untuk membaca pola, memahami motivasi, dan membangun hubungan yang lebih autentik.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Informatics</h3>
+      </div>
+      <p class="skill-desc">
+        berpikir logis dan terstruktur melalui pendekatan teknologi dan data. digunakan untuk memahami sistem, merancang solusi, dan menghubungkan aspek manusia dengan digital.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Communication</h3>
+      </div>
+      <p class="skill-desc">
+       kemampuan menyampaikan gagasan dengan kejelasan dan makna. bukan sekadar berbicara, tapi menghubungkan ide dengan emosi dan nilai audiens.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Japanese</h3>
+      </div>
+      <p class="skill-desc">
+       penguasaan bahasa dan pemahaman budaya Jepang yang membentuk disiplin. dan persiapan untuk di dunia kerja di masa yang mendatang.
+      </p>
+    </div>
+
+      <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">System Thinking</h3>
+      </div>
+      <p class="skill-desc">
+       melihat dunia dalam keterhubungan. memahami bagaimana elemen kecil saling memengaruhi keseluruhan, dan merancang solusi dengan perspektif menyeluruh.
+      </p>
+    </div>
+
+      <div class="skill-card">
+      <div class="skill-header">
+        <h3 class="skill-title">Behavioral & Strategic Analysis</h3>
+      </div>
+      <p class="skill-desc">
+     membaca dinamika sosial secara akurat, memahami motif, serta menyusun strategi berdasarkan perilaku dan konteks sosial yang ada.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="study" class="section study-timeline">
+  <div class="study-bg"></div>
+  <h2 class="section-title">Study</h2>
+
+  <p class="study-intro">
+    Saya mempelajari berbagai bidang yang saling terhubung untuk membangun sistem kesadaran dan teknologi yang hidup.
+  </p>
+
+  <div class="study-container">
+    <div class="study-item">
+      <h3>🧠 Psychology</h3>
+      <p>Psychoanalysis, Personality Psychology, Cognitive Psychology</p>
+    </div>
+
+    <div class="study-item">
+      <h3>💻 Informatics</h3>
+      <p>Web Development, Internet Of Things, AI Engineering</p>
+    </div>
+
+    <div class="study-item">
+      <h3>💼 Business</h3>
+      <p>Economy / Finance, Analysis, Branding</p>
+    </div>
+
+    <div class="study-item">
+      <h3>📚 Philosophy</h3>
+      <p>Metaphysics, Existential Philosophy, Applied Philosophy</p>
+    </div>
+
+    <div class="study-item">
+      <h3>🌐 Language</h3>
+      <p>Japanese, English</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <section id="hobbies" class="section hobbies-timeline">
+  <div class="hobbies-bg"></div>
+  <h2 class="section-title">Hobbies</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>📖 Reading</h3>
+      <p>Philosophy, Psychology, Self-Improvement, Manhwa, Business, Novel</p>
+    </div>
+    <div class="timeline-item">
+      <h3>✍️ Writing</h3>
+      <p>Journaling, Poetry, Novel</p>
+    </div>
+    <div class="timeline-item">
+      <h3>🎤 Singing</h3>
+      <p>English, Japanese, Indonesian, Funk, Phonk</p>
+    </div>
+    <div class="timeline-item">
+      <h3>🎮 Gaming</h3>
+      <p>Mobile Legend, Magic Chess</p>
+    </div>
+     <div class="timeline-item">
+      <h3>Refleksi</h3>
+    </div>
+  </div>
+</section>
+
+
+   <section id="books" class="section card-section">
+  <div class="card-bg"></div>
+  <h2 class="section-title">Favorite Books</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <img src="assets/book 1.jpg" width="120px" height="160px">
+      <h4 style="color: #FFD700;">48 Laws Of Power</h4>
+      <p>Robert Greene</p>
+    </div>
+    <div class="card">
+      <img src="assets/book2.jpg" width="120px" height="165px">
+      <h4 style="color: #FFD700;" >Dark Psychology</h4>
+      <p>David Green</p>
+    </div>
+    <div class="card">
+      <img src="assets/book3.jpeg" width="120px" height="160px">
+      <h4 style="color: #FFD700;">Madilog</h4>
+      <p>Tan Malaka</p>
+    </div>
+     <div class="card">
+      <img src="assets/book4.jpg" width="120px" height="160px">
+      <h4 style="color: #FFD700;">Atomic Habits</h4>
+      <p>James Clear</p>
+    </div>
+     <div class="card">
+      <img src="assets/book5.png" width="120px" height="160px">
+      <h4 style="color: #FFD700;">The principles of power</h4>
+      <p>Dion Yulianto</p>
+    </div>
+  </div>
+</section>
+
+
+    
+    <section id="anime" class="section card-section">
+  <div class="card-bg"></div>
+  <h2 class="section-title">Favorite Character</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <h3 style="color: #FFD700;">Johan Liebert</h3>
+      <img src="assets/johan.jpg" width="150px" height="140px">
+      <p>Monster</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #FFD700;">Uzuki Kei</h3>
+      <img src="assets/kei.jpg" width="150px" height="140px">
+      <p>Sakamoto Days</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #FFD700;">Park Jonggun</h3>
+      <img src="assets/gun.jpg" width="150px" height="140px">
+      <p>Lookism Manhwa</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #FFD700;">Dorothy Matthew</h3>
+      <img src="assets/matthew.jpg" width="150px" height="140px">
+      <p>Killer Peter Manhwa</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #FFD700;">Waguri Kaoruko</h3>
+      <img src="assets/• kaoru hana wa rin to saku _ kaoruko icons.jpeg" width="150px" height="140px">
+      <p>Kaoru Hana wa Rin</p>
+    </div>
+  
+  </div>
+</section>
+
+
+  
+   <section id="songs" class="section songs-section">
+  <h2 class="section-title">Favorite Band / Singer</h2>
+
+  <div class="music-list">
+    <div class="music-item">
+      <span class="music-rank">01</span>
+      <span class="music-name">Radiohead</span>
+      <span class="music-genre">Alternative / Art Rock</span>
+    </div>
+
+    <div class="music-item">
+      <span class="music-rank">02</span>
+      <span class="music-name">Back Number</span>
+      <span class="music-genre">J-Pop / Emotional Pop</span>
+    </div>
+
+    <div class="music-item">
+      <span class="music-rank">03</span>
+      <span class="music-name">Melly Goeslaw</span>
+      <span class="music-genre">Indonesian Pop</span>
+    </div>
+
+    <div class="music-item">
+      <span class="music-rank">04</span>
+      <span class="music-name">Muse</span>
+      <span class="music-genre">Symphonic Rock / Experimental</span>
+    </div>
+
+    <div class="music-item">
+      <span class="music-rank">05</span>
+      <span class="music-name">Alexander Rybak</span>
+      <span class="music-genre">Violinist</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+   <section class="projects" id="projects">
+  <div class="projects-container">
+    <h2 class="section-title">Project</h2>
+    <p class="projects-desc">
+      Koleksi karya yang telah dilalui sekaligus mempresentasikan <span class="highlight">ide, kerja sama dan kreativitas</span>.
+    </p>
+
+    <div class="featured-project">
+      <img src="assets/Screenshot 2025-10-14 193641.png" alt="Smart City" class="featured-img">
+      <div class="featured-text">
+        <h3>Website Fortym Aureus</h3>
+        <p>
+          Platform digital dari Fortym Aureus business excellent dengan desain modern dan interaktif
+        </p>
+        <a href="https://kodratrs.github.io/fortym.aureus/" class="project-btn">Lihat Detail</a>
+      </div>
+    </div>
+
+
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="assets/smartcarFTM01.jpg" alt="Robotik" class="project-img">
+        <div class="project-info">
+          <h4>FTM-01 Smart Car</h4>
+          <p>Kendaraan otonom dengan sistem sensor lingkungan terintegrasi.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/smarttrashbinFTM02.jpg" alt="Smart Home" class="project-img">
+        <div class="project-info">
+          <h4>FTM-02 Smart Trash</h4>
+          <p>Sistem otomatisasi tempat sampah pintar dengan teknologi IoT</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/Screenshot 2025-10-14 193845.png" alt="Fortym Project" class="project-img">
+        <div class="project-info">
+          <h4>Website Techno Vision</h4>
+          <p>Platform Digital untuk konsultasi teknologi dan inovasi</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/trash toss trouble.jpg" alt="Smart Home" class="project-img">
+        <div class="project-info">
+          <h4>Game : Trash Toss Trouble</h4>
+          <p>Game arkade 2D yang berfokus pada permainan kompetitif yang seru.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/Cover vol 1.jpg" alt="Smart Home" class="project-img">
+        <div class="project-info">
+          <h4>Zenic : Clash To Peace</h4>
+          <p>Karya sastra novel yang bereferensi dari kisah nyata, sebuah perbedaan dengan satu tujuan. perdamaian.</p>
+        </div>
+      </div>
+
+    
+    </div>
+  </div>
+</section>
+
+
+    <section id="poems" class="section">
+        <h2 class="section-title"> Best Poems</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3 style="color: #FFD700;">Retakan Waktu</h3>
+                <p>Keterbatasan dimensi antara aku dan sosok ntah siapa, tak nyata..</p>
+                <a href="assets/puisi1.html"> <p>Klik untuk lihat isinya</p></a>
+            </div>
+            <div class="card">
+                <h3 style="color: #FFD700;">Puncak Dikara</h3>
+                <p>Pertemuan ilusiku di puncak rasa cinta yang dikara</p>
+                <a href="assets/puisi2.html"> <p>Klik untuk lihat isinya</p></a>
+            </div>
+            <div class="card">
+                <h3 style="color: #FFD700;">Sampai Disini</h3>
+                <p>Akhir perjalananku yang ditinggalkan tanpa pesan.</p>
+                <a href="assets/puisi3.html"> <p>Klik untuk lihat isinya</p></a>
+            </div>
+            <div class="card">
+                <h3 style="color: #FFD700;">Diri dan Buana</h3>
+                <p>Hubungan antara diriku dan alam semesta yang absurd.</p>
+                <a href="assets/puisi4.html"> <p>Klik untuk lihat isinya</p></a>
+            </div>
+          <div class="card">
+                <h3 style="color: #FFD700;">Perasaan dua minggu</h3>
+                <p>Perjalananku melewati masalah hubungan dengan sahabatku.</p>
+                <a href="assets/puisi5.html"> <p>Klik untuk lihat isinya</p></a>
+            </div>
+
+            <div class="card">
+                <h3 style="color: #FFD700;">Siapa yang peduli?</h3>
+                <p>Belum ada dan tidak akan ada yang akan mengerti.</p>
+                <a href="assets/puisi6.html"> <p>Klik untuk lihat isinya</p></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="partof" class="section">
+        <h2 class="section-title">Part Of</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3 style="color: #FFD700;"> Fortym Aureus</h3>
+                <img src="assets/fortymHD.png" width="210px" height="200px">
+                <p>Founder - Digital Business Company </p>
+                <p>Membangun solusi teknologi untuk masa depan yang lebih baik.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #FFD700;">ZENIC : Clash To Peace</h3>
+                <img src="assets/Cover vol 1.jpg" width="150px" height="200px" >
+                <p>Penulis novel "Clash to Peace" kisah yang terinspirasi dari kenyataan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="coming-soon" class="section coming-soon">
+      <div class="card">
+  <div class="coming-bg"></div>
+  <h2 class="section-title">Coming Soon</h2>
+  <div class="coming-content">
+    <h3 class="coming-title">Zenithion System (Zen)</h3>
+    <p class="coming-desc">
+      Sebuah teori psikologis baru atau lebih tepatnya, sistem internal yang sedang dikembangkan oleh 
+      <span class="highlight">Kodrat Ratu Alamsyah</span> 
+      menyatukan <em>Psychoanalysis(Freud & Jung), Neurosains (Embodied cognition & HPA Axis), humanistic Psychology (Flow & Peak exp) dan Psychophysiological Control </em> 
+      dalam satu kerangka analisis yang terstruktur.  
+      <br><br>
+      <strong>Riset mendalam sedang berlangsung...</strong><br>
+      <span class="coming-tagline">Prepare to witness the next paradigm.</span>
+    </p>
+  </div>
+  </div>
+</section>
+
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="https://mail.google.com/mail/u/0/#inbox"><p>KodratRA@gmail.com</p></a>
+            </div>
+            <div class="contact-item">
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/a.lamzsy_?igsh=dXdsc3dsMDNhZXNw"><p>@a.lamzsy_</p></a>
+            </div>
+            <div class="contact-item">
+                <h3>WA Channel</h3>
+                <a href="https://whatsapp.com/channel/0029Vb2cpWPLNSa6v3mJrf0S "class="wa-btn" target="_blank" rel="noopener noreferrer"><p>Reyv ALv</p></a>
+            </div>
+        </div>
+        <div class="contact-item">
+                <h3>Check My Partner Web TO</h3>
+                <a href="https://zuraakaelkiller.github.io/M.Web/"class="wa-btn" target="_blank" rel="noopener noreferrer"><p>M Ichsan A</p></a>
+        </div>
+        <div style="text-align: center;">
+            <a href="https://ngl.link/a.lamzsy_46270" class="ngl-btn" target="_blank" rel="noopener noreferrer">Kirim Pesan via NGL</a>
+        </div>
+    </section>
+
+   
+    <footer class="footer">
+        <p class="footer-quote">"Build, create, leave a mark. Observe, adapt, master self."</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+            <div id="lightbox-body"></div>
+        </div>
+    </div>
+
+    <script>
+     
+document.addEventListener("DOMContentLoaded", () => {
+
+  function setupCardHover(selector, intensity = 15, glowStrength = 0.6) {
+    const cards = document.querySelectorAll(selector);
+    cards.forEach(card => {
+      let rafId = null;
+
+      const updateTransform = (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / intensity) * -1;
+        const rotateY = ((x - centerX) / intensity);
+
+        
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.06)`;
+        card.style.boxShadow = `
+          ${-rotateY * 1.2}px ${rotateX * 1.2}px 25px rgba(255,215,0,${glowStrength}),
+          0 0 35px rgba(255,215,0,${glowStrength * 0.8}),
+          inset 0 0 25px rgba(255,215,0,${glowStrength * 0.5})
+        `;
+      };
+
+      const resetTransform = () => {
+        card.style.transition = "transform 0.25s ease-out, box-shadow 0.25s ease-out";
+        card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+        card.style.boxShadow = "0 0 10px rgba(255,215,0,0.25)";
+        cancelAnimationFrame(rafId);
+        setTimeout(() => { card.style.transition = ""; }, 250);
+      };
+
+      card.addEventListener("mousemove", (e) => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => updateTransform(e));
+      });
+
+      card.addEventListener("mouseleave", resetTransform);
+    });
+  }
+
+ 
+  setupCardHover(".card", 65, 0.7);
+
+  
+  setupCardHover(".project-card", 10, 0.9);
+});
+
+      
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+   
+        function typeWriter() {
+            const texts = [
+                "The Philosopher-Strategist",
+                "The Conscious Observer",
+                "Existential Archetype"
+            ];
+            let textIndex = 0;
+            let charIndex = 0;
+            const typingElement = document.getElementById('typingText');
+
+            function type() {
+                if (charIndex < texts[textIndex].length) {
+                    typingElement.textContent += texts[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(erase, 2000);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, 50);
+                } else {
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, 500);
+                }
+            }
+
+            setTimeout(type, 2000);
+        }
+
+  
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.skill-card').forEach(card => observer.observe(card));
+
+     
+        function observeElements() {
+            const elements = document.querySelectorAll('.section-title, .about-text, .skill-card, .card, .project-card, .contact-item');
+            elements.forEach(el => observer.observe(el));
+
+            
+        }
+
+        const projectData = {
+            project1: {
+                title: "Smart Car FTM01",
+                description: "Kendaraan otonom dengan sistem navigasi AI dan sensor lingkungan terintegrasi. Menggunakan teknologi machine learning untuk navigasi adaptif dan keamanan maksimal."
+            },
+            project2: {
+                title: "Smart Trash FTM02",
+                description: "Sistem manajemen sampah pintar dengan teknologi IoT dan machine learning. Mengoptimalkan pengumpulan sampah dan monitoring lingkungan secara real-time."
+            },
+            project3: {
+                title: "Website Fortym Aureus",
+                description: "Platform digital business dengan desain modern dan fungsionalitas lengkap. Menyediakan solusi bisnis digital yang komprehensif dan user-friendly."
+            },
+            project4: {
+                title: "Tecno Vision",
+                description: "Aplikasi computer vision untuk analisis dan pemrosesan gambar real-time. Menggunakan AI untuk deteksi objek dan analisis visual yang akurat."
+            },
+            project5: {
+                title: "Novel ZENIC: Clash to Peace",
+                description: "Karya sastra yang mengeksplorasi konflik internal dan pencarian kedamaian. Sebuah perjalanan filosofis tentang transformasi diri dan pencarian makna hidup."
+            }
+        };
+
+        function openLightbox(projectId) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxBody = document.getElementById('lightbox-body');
+            const project = projectData[projectId];
+            
+            lightboxBody.innerHTML = `
+                <h2 style="color: #FFD700; margin-bottom: 1rem;">${project.title}</h2>
+                <p style="color: #cccccc; line-height: 1.6;">${project.description}</p>
+            `;
+            
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+
+
+        
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        function closeWelcome() {
+            const modal = document.getElementById('welcomeModal');
+            modal.classList.add('hidden');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 500);
+        }
+
+      
+        setTimeout(() => {
+            closeWelcome();
+        }, 10000);
+
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            typeWriter();
+            observeElements();
+        });
+        
+
+const studyCards = document.querySelectorAll('.study-card');
+
+
+
+
+const cards = document.querySelectorAll('.card');
+
+
+ const btn = document.getElementById('playAudioBtn');
+  const audio = document.getElementById('bgMusic');
+
+  btn.addEventListener('click', () => {
+    audio.play().then(() => {
+      console.log('Audio started!');
+      btn.style.display = 'none'; // sembunyikan tombol setelah klik
+    }).catch(err => {
+      console.log('Audio gagal diputar:', err);
+    });
+  });
+
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ca3f28c2214ad6',t:'MTc2MDE0MjYwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
